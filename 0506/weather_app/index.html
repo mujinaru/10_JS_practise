@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css">
-    <title>Document</title>
+
+    <title>ドットお天気</title>
 
     <style>
         body {
-            background-color: #d6eeff;
+
+
+            /* background-color: #d6eeff; */
+            font-family: "ベストテンDOT";
         }
 
         .inner {
@@ -21,10 +25,18 @@
         h1 {
             text-align: center;
             background-color: #2244ff;
+            padding: 10px;
 
             & span {
                 font-size: 0.7em;
             }
+        }
+
+        main {
+            background-image: url(./images/Cloud.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 110px;
         }
 
         .three {
@@ -35,12 +47,36 @@
             background-color: #fff;
             width: 26%;
             padding: 30px 0;
-            margin-top: 40px;
+            margin: 50px 0;
+            border-radius: 20px;
         }
 
-        .three button {
-            width: 50%;
-            margin: 20px 0;
+
+        .button12 {
+            background-color: #fff;
+            border: solid 2px #191970;
+            color: #191970;
+            border-radius: 20px;
+            padding: 10px 30px;
+            margin: 15px 0;
+            text-decoration: none;
+            font-size: 1em;
+            box-shadow: 0 5px 0 #191970;
+            display: inline-block;
+            transition: .3s;
+        }
+
+        .button12:hover {
+            color: #191970;
+            transform: translateY(5px);
+            box-shadow: 0 0 0 #191970;
+        }
+
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
         }
 
         .speaker,
@@ -50,8 +86,20 @@
         }
 
         .forecast {
-            margin-inline: auto;
             text-align: center;
+            display: flex;
+            width: 30%;
+            height: 350px;
+            background-color: #fff;
+            flex-direction: column;
+            justify-content: space-around;
+            border-radius: 20px;
+        }
+
+        footer {
+            background-image: url(./images/images.png);
+            bottom: 0;
+            height: 200px;
         }
     </style>
 
@@ -60,23 +108,27 @@
 
 <body>
     <header>
-        <h1>ただの天気予報<br>
+        <h1>ドットお天気<br>
             <span>西部</span>
         </h1>
     </header>
 
-    <div class="inner">
-        <div class="three">
-            <button class="today"></button>
-            <button class="tomorrow"></button>
-            <button class="twodayslater"></button>
+    <main>
+        <div class="inner">
+            <div class="main">
+                <div class="three">
+                    <button class="button12  today"><span></span></button>
+                    <button class="button12  tomorrow"><span></span></button>
+                    <button class="button12  twodayslater"><span></span></button>
+                </div>
+                <div class="forecast"></div>
+            </div>
         </div>
-        <main>
-            <div class="forecast"></div>
-        </main>
-        <button class="speaker">天気予報を聞く</button>
-        <button class="speakerstop">止める</button>
-    </div>
+    </main>
+
+    <footer>
+
+    </footer>
 
     <script src="./weathercodes.js"></script>
 
